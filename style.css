@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+}
+.background{
+    height: 100vh;
+    width:100vw;
+    position: absolute;
+    overflow: hidden;
+    background:#fcf6f4;
+    z-index: -1;
+    padding:96px;
+}
+
+.background::after{
+    content: '';
+    position: absolute;
+    width: 200vw;
+    height: 200vh;
+    left: -50%;
+    top:-50%;
+    background-image: url(noise.png);
+    animation: grain 2s steps(6) infinite;
+}
+
+@keyframes grain {
+    0%, 100% { transform: translate(0, 0);}
+    10% { transform: translate(-5%, -10%);}
+    30% { transform: translate(3%, -15%);}
+    50% { transform: translate(12%, 9%);}
+    70% { transform: translate(9%, 4%);}
+    90% { transform: translate(-1%, 7%);}
+}
+
+.nav, .email, .resume{
+    position: relative;
+    z-index: 1;
+    font-size: 0.972vw;
+    line-height: 1.389vw;
+    letter-spacing: 0.02em;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.nav > ul{
+    list-style: none;
+}
+.nav ul > li > a{
+    text-decoration: none;
+    color:#100f0f;
+}
+
+.nav .nav-left{
+    display: flex;
+}
+.nav .nav-left li:nth-child(2){
+    margin-left: 10px;
+}
+
+
+
+.name {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height:25vw;
+    align-items: flex-end;
+    /* width: max-content; */
+    /* margin-left: auto; */
+}
+
+.name .email{
+    position: relative;
+    bottom:30px;
+}
+.name .email a{
+    color:#100f0f;
+    line-height: 1.389vw;
+    letter-spacing: 0.02em;
+}
+
+.name h1{
+    position: relative;
+    font-size: 15vw;
+    color:#100f0f;
+    left:15px;
+}
+
+.section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.section .left .email a{
+    /* text-decoration: none; */
+    color:#100f0f;
+}
+
+.section .left .bio{
+    font-size: 2vw;
+    font-weight: 500;
+    line-height: 2.1vw;
+    letter-spacing: -0.120vw;
+}
+
+
+.section .right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.section .right .resume a{
+    text-decoration: none;
+    color: #100f0f;
+    font-size: 1.5vw;
+    font-weight: 600;
+}
+
+.section .right .another-bio{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+.section .right .another-bio p{
+    font-size: .972vw;
+    color:#100f0f;
+}
+
+::selection{
+    background-color: black;
+    color:#fff;
+}
+
+/* text animation start */
+
+.hide{
+    background: #fcf6f4;
+    overflow: hidden;
+}
+
+.nav-left, .nav-right, .section{
+    overflow: hidden;
+}
+
+/* text animation end */
+
+
+/* responsive start */
+
+@media screen and (max-width: 502px){
+    .background{
+        padding: 0px;
+    }
+    .background > div{
+        margin:0 10vw;
+    }
+    .nav, .email, .resume{
+        position: relative;
+        font-size: 3.889vw;
+        line-height: 5.833vw;
+        letter-spacing: 0.02em;
+    }
+    .nav{
+        top: 9vw;
+    }
+
+    .section{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .section .left{
+        position: absolute;
+
+    }
+
+    .section .left .bio{
+        font-size: 5vw;
+        font-weight: 600;
+        line-height: 5vw;
+    }
+
+    .section .right{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        position: relative;
+        top:130vw;
+    }
+    .section .right .resume a{
+        font-size: 6vw;
+    }
+    .section .right .another-bio{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+    .section .right .another-bio p{
+        font-size: 4vw;
+        color:#100f0f;
+    }
+
+    .name{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top:60vw;
+        background-color: pink;
+    }
+
+    .name h1{
+        top:10vw;
+        font-size: 32vw;
+        color:#100f0f;
+        left: 0;
+    }
+
+    .name .email{
+        position: absolute;
+        bottom:-21vw;
+        font-size: 3vw;
+    }
+    .hide{
+        overflow: visible;
+    }
+    .section{
+        overflow: visible;
+    }
+
+
+}
+
+/* responsive end */
