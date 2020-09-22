@@ -35,3 +35,16 @@ if(width > 502){
     });
     tl.from('.email, h1, p, .resume', 1.8, { y:225, stagger: .1, ease:'power4.easeOut'});
 }
+
+if(width<=502){
+    const tl = gsap.timeline();
+    tl.from('li', 1.6, {
+        y:200,
+        ease:'power4.out',
+        // delay:1,
+        skewY:40,
+        stagger:{
+            amount:0.4
+        }
+    });
+}
